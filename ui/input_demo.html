@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Knowledge Generator</title>
+	<style>
+		body {
+			background-color: #9a9a9a;
+			color: #ffffff;
+			font-size: 24px;
+			text-align: center;
+		}
+		#title {
+			font-size: 36px;
+			margin-top: 20px;
+		}
+		#logo {
+			margin-top: 50px;
+			resize: 0.8;
+		}
+		#input-field {
+			background-color: #222222;
+			border: none;
+			border-radius: 5px;
+			color: #ffffff;
+			font-size: 24px;
+			margin-top: 50px;
+			padding: 10px;
+			width: 80%;
+			height: 150px;
+			resize: none;
+			outline: none;
+		}
+		#submit-button {
+			background-color: #ffffff;
+			border: none;
+			border-radius: 5px;
+			color: #222222;
+			font-size: 24px;
+			margin-top: 20px;
+			padding: 10px;
+			width: 150px;
+			outline: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="logo">
+		<img src="aifred_icon.png" alt="AI-Fred">
+	</div>
+	<div id="title">
+		Tell me what I need to know :) 
+	</div>
+	<textarea id="input-field" placeholder="Click the button below to teach AI-Fred a piece of knowledge"></textarea>
+    <button onclick="saveText()">Save</button>
+	<script src="FileSaver.js">
+		function saveText() {
+			var textToSave = document.getElementById("input-field").value;
+			var blob = new Blob([textToSave], {type: "text/plain;charset=utf-8"});
+			saveAs(blob, "knowledge.txt");
+		}
+	</script>
+</body>
+</html>
