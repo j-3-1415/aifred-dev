@@ -41,9 +41,9 @@ def run_inference(
         base_model,
         tokenizer
 ):
-    index = faiss.read_index("docs.index")
+    index = faiss.read_index("../data/docs.index")
 
-    with open("aifred_docs.pkl", "rb") as f:
+    with open("../data/aifred_docs.pkl", "rb") as f:
         store = pickle.load(f)
 
     store.index = index
