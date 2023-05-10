@@ -88,7 +88,7 @@ def main():
     args = parser.parse_args()
 
     # set openai key
-    os.environ["OPENAI_API_KEY"] = "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"
+    os.environ["OPENAI_API_KEY"] = ""
 
     tokenizer = LlamaTokenizer.from_pretrained("TheBloke/wizardLM-7B-HF")
 
