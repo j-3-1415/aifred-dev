@@ -74,15 +74,9 @@ def main():
     )
 
     parser.add_argument(
-        "--input_file",
+        "--input_txt",
         required=True,
-        help="Path to input text file."
-    )
-
-    parser.add_argument(
-        "--output_file",
-        required=True,
-        help="Path to ouput text file."
+        help="Input text."
     )
 
     args = parser.parse_args()
@@ -99,8 +93,7 @@ def main():
     )
 
     run_inference(
-        input_file=args.input_file,
-        output_file=args.output_file,
+        input_txt=args.input_txt,
         base_model=base_model,
         tokenizer=tokenizer
     )
